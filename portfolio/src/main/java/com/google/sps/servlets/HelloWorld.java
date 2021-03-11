@@ -1,6 +1,6 @@
 package com.google.sps.servlets;
 import java.util.ArrayList;
-
+import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +18,10 @@ public class HelloWorld extends HttpServlet {
     contaner.add("pace your self");
     contaner.add("believe yourself");
     contaner.add("gladiators go!");
+
+    Gson gson = new Gson();
+    String json = gson.toJson(contaner);
     response.setContentType("text/html;");
-    response.getWriter().println(contaner);
+    response.getWriter().println(json);
   }
 }
