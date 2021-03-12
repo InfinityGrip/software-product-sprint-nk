@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="showServerString()"> 
     <div id="content">
 
 
-      <h1>My Portfolio</h1>
+      <h1>Eddy's Portfolio</h1>
       <p>This is Eddy's portfolio.</p>
       <p>Hello! My name is Eddy Nkere and my hometown is Charlottesville Virginia.</p>
       <p>One thing that I am quite passionate about is the story line of syfy characters in movies and TV-shows.</p>
       <p> One of them is the Mad Titan and the Black Order</p>
       <img src="img/thanos2.jpg" width = "500" height= "300"/>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+      <p>Click <a href="/MyServelt">here</a> to see content created by server code.</p>
       <p>Click here to learn the names of each one of the children of Thanos:</p>
       <button onclick="addRandomGreeting()">Click</button>
       <div id="greeting-container"></div>
@@ -33,7 +34,9 @@
        <h2>Links</h2>
        <p>Here is a link to my <a href="www.linkedin.com/in/eddy-nk-tothemoon">LinkedIn</a> account.</p>
        <h2>Galery</h2>
-       <p>Here is few picture of me</p>
+       <p>Here is a good quoat for the day:</p>
+       <div id="container"></div>  
+       <p>Here is a picture of me</p>
        <img src="img/i4.jpg" width = "400" height= "200"/>
   </div>
   </body>
