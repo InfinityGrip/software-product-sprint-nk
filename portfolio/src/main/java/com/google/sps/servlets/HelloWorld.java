@@ -18,10 +18,12 @@ public class HelloWorld extends HttpServlet {
     contaner.add("pace your self");
     contaner.add("believe yourself");
     contaner.add("gladiators go!");
-
     Gson gson = new Gson();
     String json = gson.toJson(contaner);
     response.setContentType("text/html;");
     response.getWriter().println(json);
   }
+
+
+
 }
