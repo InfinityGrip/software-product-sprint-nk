@@ -11,8 +11,8 @@
     <div id="content">
 
 
-      <h1>Eddy's Portfolio</h1>
-      <p>This is Eddy's portfolio.</p>
+      <h1>Portfolio</h1>
+      <img src="img/i4.jpg" width = "400" height= "200"/>
       <p>Hello! My name is Eddy Nkere and my hometown is Charlottesville Virginia.</p>
       <p>One thing that I am quite passionate about is the story line of syfy characters in movies and TV-shows.</p>
       <p> One of them is the Mad Titan and the Black Order</p>
@@ -21,6 +21,8 @@
       <p>Click here to learn the names of each one of the children of Thanos:</p>
       <button onclick="addRandomGreeting()">Click</button>
       <div id="greeting-container"></div>
+      <p>Booster of the day:</p>
+      <div id="container"></div>
       <h2>Background</h2>
       <p>I was born in the Republic Democratic of Congo, and moved to the United State in 2015.
           I love being active, by exercising and being in conection with nature. I love board games like: chess, checker, and sudoku. They help me improve my critical and analical ways of thinking. 
@@ -31,13 +33,68 @@
        <p>MineField, Imaginary-Soldier, and Class-Grades</p>
        <p>I completed class grades using lists and dictionaries in python, with a set of different grades for students the project had to calculate and return the grades average of individual students and the whole class in general.</p>
        <p>MineField and imaginary Soldiers were completed using java; MineField consisted of a 2 dimentional board field with a specific number of mines desired by user. I desided the game using basic java tools such as Arrays, this was my proper introduction to Java.</p>
+
+       <!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function requestTranslation() {
+        const text = document.getElementById('text').value;
+        const languageCode = document.getElementById('language').value;
+
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerText = 'Loading...';
+
+        const params = new URLSearchParams();
+        params.append('text', text);
+        params.append('languageCode', languageCode);
+
+        fetch('/translatedlang', {
+          method: 'POST',
+          body: params
+        }).then(response => response.text())
+        .then((translatedMessage) => {
+          resultContainer.innerText = translatedMessage;
+        });
+      }
+    </script>
+
+    <style>
+      #text {
+        width: 500px;
+        height: 125px;
+      }
+
+      #language {
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h2>Fun fact</h2>
+       <p>I speak four aditional languanges on top of English; French, Swahili, Kirundi and Kinyarwanda. Tap into the box below to see  it translation into one of those four languages.</p>
+
+    <textarea id="text"></textarea>
+
+    <select id="language">
+      <option value="es">English</option>
+      <option value="fr">French</option>
+      <option value="sw">Swahili</option>
+      <option value="rn">Kirundi</option>
+      <option value="rw">Kinyarwanda</option>
+    </select>
+    <button onclick="requestTranslation();">Translate</button>
+
+    <hr/>
+    <div id="result"></div>
+  </body>
+</html>
        <h2>Links</h2>
        <p>Here is a link to my <a href="www.linkedin.com/in/eddy-nk-tothemoon">LinkedIn</a> account.</p>
-       <h2>Galery</h2>
-       <p>Here is a good quoat for the day:</p>
-       <div id="container"></div>  
-       <p>Here is a picture of me</p>
-       <img src="img/i4.jpg" width = "400" height= "200"/>
+       
   </div>
   </body>
 </html>
