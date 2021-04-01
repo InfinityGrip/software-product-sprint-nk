@@ -26,3 +26,23 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+// translation servlet
+function requestTranslation() {
+        const text = document.getElementById('text').value;
+        const languageCode = document.getElementById('language').value;
+
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerText = 'Loading...';
+
+        const params = new URLSearchParams();
+        params.append('text', text);
+        params.append('languageCode', languageCode);
+
+        fetch('/translatedlang', {
+          method: 'POST',
+          body: params
+        }).then(response => response.text()).then((translatedMessage) => {
+          resultContainer.innerText = translatedMessage;
+        });
+      }
